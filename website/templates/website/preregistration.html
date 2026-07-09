@@ -1,0 +1,327 @@
+{% extends 'header.html' %}
+{% load static %}
+{% comment %} {% block title %}پیش ثبت{% endblock title %} {% endcomment %}
+{% block title %}پیش‌ثبت‌نام | دبیرستان مهر اول{% endblock title %}
+{% block meta_description %}<meta name="description" content="فرم پیش‌ثبت‌نام دبیرستان پسرانه مهر اول کرج - ثبت‌نام آنلاین در بهترین مدرسه غیرانتفاعی استان البرز." />{% endblock %}
+{% block og_title %}پیش‌ثبت‌نام | دبیرستان مهر اول{% endblock %}
+{% block og_description %}فرم پیش‌ثبت‌نام دبیرستان پسرانه مهر اول کرج{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'website/css/style_preregistration.css' %}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Vazirmatn:wght@100..900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+{% endblock extra_css %}
+
+{% block content %}
+
+<div class="part">
+    <div class="container">
+
+        <h2>فرم پیش‌ثبت‌نام</h2>
+
+        <div class="progress">
+            <div id="bar1" class="active"></div>
+            <div id="bar2"></div>
+            <div id="bar3"></div>
+            <div id="bar4"></div>
+        </div>
+
+
+<form id="form" method="POST">
+    {% csrf_token %}
+
+    <!-- Step 1 -->
+    <div class="step active">
+
+        <label>نام و نام خانوادگی *</label>
+        <input
+            type="text"
+            name="full_name"
+            required
+            placeholder="آریا ایرانی"
+        >
+
+        <label>رشته فعلی *</label>
+        <input
+            type="text"
+            name="current_field"
+            required
+            placeholder="ریاضی"
+        >
+
+        <label>مقطع تحصیلی *</label>
+        <input
+            type="text"
+            name="degree"
+            required
+            placeholder="دهم"
+        >
+
+        <label>معدل نوبت اول *</label>
+        <input
+            type="number"
+            name="grade"
+            step="0.01"
+            min="0"
+            max="20"
+            required
+            placeholder="19.50"
+        >
+
+        <button type="button" onclick="nextStep()">
+            مرحله بعد
+        </button>
+
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+
+        <label>مدرسه فعلی *</label>
+        <input
+            type="text"
+            name="current_school"
+            required
+            placeholder="دبیرستان حکیم"
+        >
+
+        <label>رشته مورد نظر *</label>
+        <input
+            type="text"
+            name="field_of_study"
+            required
+            placeholder="ریاضی"
+        >
+        <button type="button" onclick="nextStep()">
+            مرحله بعد
+        </button>
+
+        <button type="button" onclick="prevStep()">
+            قبلی
+        </button>
+
+
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+
+        <label>تلفن منزل *</label>
+        <input
+            type="tel"
+            name="home_phone_number"
+            required
+            placeholder="02631234567"
+        >
+
+        <label>موبایل پدر *</label>
+        <input
+            type="tel"
+            name="dad_phone_number"
+            required
+            placeholder="09121234567"
+        >
+
+        <label>موبایل مادر *</label>
+        <input
+            type="tel"
+            name="mom_phone_number"
+            required
+            placeholder="09129876543"
+        >
+
+        <label>موبایل دانش‌آموز *</label>
+        <input
+            type="tel"
+            name="student_phone_number"
+            required
+            placeholder="09361234567"
+        >
+
+        <button type="button" onclick="nextStep()">
+            مرحله بعد
+        </button>
+        <button type="button" onclick="prevStep()">
+            قبلی
+        </button>
+
+
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step">
+
+        <label>آدرس منزل *</label>
+        <textarea
+            name="address"
+            rows="3"
+            required
+        ></textarea>
+
+        <label>علت تغییر مدرسه (اختیاری)</label>
+        <textarea
+            name="reason_for_changing_the_school"
+            rows="3"
+        ></textarea>
+
+        <button type="submit">
+            ثبت نهایی
+        </button>
+        <button type="button" onclick="prevStep()">
+            قبلی
+        </button>
+
+
+    </div>
+
+</form>
+
+
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    let currentStep = 0;
+
+    const steps = document.querySelectorAll(".step");
+    const bars = document.querySelectorAll(".progress div");
+
+    function showStep(index) {
+
+        steps.forEach((step, i) => {
+
+            step.classList.remove("active");
+            bars[i].classList.remove("active");
+
+            if (i <= index) {
+                bars[i].classList.add("active");
+            }
+
+        });
+
+        steps[index].classList.add("active");
+    }
+
+    window.nextStep = function () {
+
+        const inputs = steps[currentStep].querySelectorAll("input, textarea");
+
+        for (let input of inputs) {
+
+            if (!input.checkValidity()) {
+
+                input.reportValidity();
+                return;
+
+            }
+
+        }
+
+        if (currentStep < steps.length - 1) {
+
+            currentStep++;
+            showStep(currentStep);
+
+        }
+
+    }
+
+    window.prevStep = function () {
+
+        if (currentStep > 0) {
+
+            currentStep--;
+            showStep(currentStep);
+
+        }
+
+    }
+
+    const gradeInput = document.querySelector('input[name="grade"]');
+
+    if (gradeInput) {
+
+        gradeInput.addEventListener("input", function () {
+
+            this.value = this.value.replace(/[^0-9.]/g, "");
+
+            if ((this.value.match(/\./g) || []).length > 1) {
+
+                this.value = this.value.substring(
+                    0,
+                    this.value.lastIndexOf(".")
+                );
+
+            }
+
+            let number = parseFloat(this.value);
+
+            if (number > 20) {
+
+                this.value = 20;
+
+            }
+
+            if (number < 0) {
+
+                this.value = 0;
+
+            }
+
+        });
+
+        gradeInput.addEventListener("blur", function () {
+
+            let value = parseFloat(this.value);
+
+            if (isNaN(value)) {
+
+                this.value = "";
+
+            }
+
+            else if (value > 20) {
+
+                this.value = 20;
+                alert("معدل نمی‌تواند بیشتر از 20 باشد");
+
+            }
+
+            else if (value < 0) {
+
+                this.value = 0;
+                alert("معدل نمی‌تواند منفی باشد");
+
+            }
+
+        });
+
+    }
+
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".nav-menu");
+
+    if (toggle && menu) {
+
+        toggle.addEventListener("click", function () {
+
+            menu.classList.toggle("active");
+
+        });
+
+    }
+
+});
+
+</script>
+
+{% endblock %}

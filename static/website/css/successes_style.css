@@ -1,0 +1,138 @@
+body {
+  padding-top: 60px;
+  margin: 0;
+  font-family: "Vazirmatn", sans-serif;
+  background: #f3f3f3;
+}
+
+/* HERO */
+.hero {
+  background: #f8f8f8;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.hero-top {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content:center;
+  gap: 20px;
+  align-items: center;
+}
+
+
+
+.hero-text h1 {
+  color: #7b0d0d;
+  font-size: 32px;
+  margin: 0;
+}
+
+.hero-text p {
+  color: gray;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 60px;
+}
+
+.logo span {
+  font-weight: bold;
+  color: #7b0d0d;
+}
+
+/* STATS */
+.stats {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 200px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+}
+
+.card h3 {
+  color: #7b0d0d;
+  margin: 0;
+}
+
+.card p {
+  color: gray;
+  font-size: 14px;
+}
+
+/* FILTER */
+.filters {
+  margin-top: 30px;
+}
+
+.filters button {
+  font-family: "Vazirmatn", sans-serif;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: #eee;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.filters .active {
+  background: #7b0d0d;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.filters .active:hover {
+  background: #5e1010;
+  color: white;
+}
+
+/* STUDENTS */
+.students {
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.students h2 {
+  color: #7b0d0d;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: 25px;
+}
+
+/* کارت دانش آموز */
+.student {
+  background: #FEFEFE;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+/* عکس */
+.img-box {
+  position: relative;
+}
+
+.img-box img {
+  width: 100%;
+  border-radius: 12px;
+}
+

@@ -1,0 +1,171 @@
+{% extends "header.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'website/css/about_style.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+    <!-- start header about -->
+    <header>
+        <div class="header_box">
+            <div class="header_content">
+                <img class="header_img" src="{% static 'website/img/about/header.webp' %}" alt="درباره مهر اول">
+            </div>
+        </div>
+    </header>
+    <!-- end header about -->
+
+    <!-- start about -->
+    <div class="about">
+        <div class="about_box">
+            <div class="about_school">
+                <img class="about_img" src="{% static 'website/img/about/about.webp' %}" alt="">
+                <p class="about_content">
+                    دبیرستان مهر اول به دنبال تربیت انسان‌هایی است که در آنها «حق بر باطل، پاکی بر پلیدی، عقل بر مزاج، مطالعه بر غریزه، دقّت بر پرگویی، فکر بر هیجان» ترجیح دارد، و در آرزوی گرد آوردن قوی‌ترین تیم آموزشی و پرورشی کشور است.<br><br>
+                    با همت آقای هاشم میرزایی در سال ۱۳۹۱ اقدام به تأسیس مدرسه مهر اول “دبیرستان پسرانه” در کرج شد. مدرسه‌ای که با ظرفیت بیش از پانصد دانش‌آموز، ۲۴ کلاس و در سه طبقه در متراژی بزرگ تأسیس گردید. تمام کوشش و آرزوی مؤسس و کارکنان مدرسه مهراول، ساخت مدرسه‌ای نزدیک به استانداردهای جهانی است.<br><br>
+                    مکانی که برای نوجوانان دوره دلنشینی را رقم زده و برای رسیدن به دانشگاه‌های معتبر ایرانی نقش پلی را ایفا کرده است. در این مدرسه به تمام نیازهای اساسی دانش‌آموزان از جمله پرسش‌های اساسی: جسمی، روحی و روانی به بهترین شکل پاسخ داده می‌شود.
+                </p>
+            </div>
+            <div class="equipment">
+                <img src="{% static 'website/img/about/equip1.webp' %}" alt="">
+                <img src="{% static 'website/img/about/equip2.webp' %}" alt="">
+                <div class="equipment_content">
+                    <h4>تجهیزات مدرسه مهر اول</h4>
+                    <p>✔ تخته وایت‌بردهای سرامیکی</p>
+                    <p>✔ صندلی‌های تک‌نفره</p>
+                    <p>✔ سالن همایش مجهز به صندلی‌های آمفی‌تئاتر</p>
+                    <p>✔ پروژکتور</p>
+                    <p>✔ سیستم صوتی</p>
+                    <p>✔ تهویه مناسب</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end about -->
+
+    <!-- start stats -->
+    <section class="stats-section">
+        <h2 class="section-title">مهر اول در یک نگاه</h2>
+        <div class="stats-container">
+            <div class="stat">
+                <div class="icon">👤</div>
+                <div class="stat-number" data-target="45">80</div>
+                <div class="stat-text">همکار</div>
+            </div>
+            <div class="stat">
+                <div class="icon">🎓</div>
+                <div class="stat-number" data-target="1500">1500</div>
+                <div class="stat-text">فارغ‌التحصیل</div>
+            </div>
+            <div class="stat">
+                <div class="icon">📅</div>
+                <div class="stat-number" data-target="12">14</div>
+                <div class="stat-text">سال فعالیت حرفه‌ای</div>
+            </div>
+            <div class="stat">
+                <div class="icon">🏆</div>
+                <div class="stat-number" data-target="169">200</div>
+                <div class="stat-text">رتبه برتر</div>
+            </div>
+        </div>
+    </section>
+    <!-- end stats -->
+
+    <!-- فعالیت‌های ورزشی، هنری و اردوها -->
+    <div class="part">
+        <div class="title"><p class="title_text">فعالیت‌های ورزشی</p></div>
+        <div class="pics">
+            <div class="pic"><img src="{% static 'website/img/about/pic1.webp' %}" alt=""><p>تیم فوتسال</p></div>
+            <div class="pic"><img src="{% static 'website/img/about/pic2.webp' %}" alt=""><p>تیم تنیس روی میز</p></div>
+            <div class="pic"><img src="{% static 'website/img/about/pic3.webp' %}" alt=""><p>تیم والیبال</p></div>
+        </div>
+    </div>
+
+    <div class="part">
+        <div class="title"><p class="title_text">فعالیت‌های هنری</p></div>
+        <div class="pics">
+            <div class="pic"><img src="{% static 'website/img/about/art1.webp' %}" alt=""><p>گروه موسیقی</p></div>
+            <div class="pic"><img src="{% static 'website/img/about/art2.webp' %}" alt=""><p>گروه تئاتر</p></div>
+            <div class="pic"><img src="{% static 'website/img/about/art3.webp' %}" alt=""><p>گروه سرود</p></div>
+        </div>
+    </div>
+
+    <div class="part">
+        <div class="title"><p class="title_text">اردوهای تفریحی و پژوهشی</p></div>
+        <div class="pics">
+            <div class="pic"><img src="{% static 'website/img/about/camp1.webp' %}" alt=""><p>دانشگاه علوم پزشکی ایران</p></div>
+            <div class="pic"><img src="{% static 'website/img/about/camp2.webp' %}" alt=""><p>اردوی کیش</p></div>
+            <div class="pic"><img src="{% static 'website/img/about/camp3.webp' %}" alt=""><p>اردوی شمال</p></div>
+        </div>
+    </div>
+
+    <!-- اهداف و درباره -->
+    <section class="about-section">
+        <div class="container">
+            <div class="top-box">
+                <h2 class="section-title">اهداف مدرسه مهر اول</h2>
+                <p class="desc">
+                    مهر اول به عنوان یکی از برترین دبیرستان‌های غیرانتفاعی کرج، با بهره‌گیری از اساتید مجرب و برنامه‌های آموزشی نوین، مسیر رشد علمی و فرهنگی دانش‌آموزان را هموار می‌سازد.
+                </p>
+                <div class="features">
+                    <div class="feature">🎯 برنامه‌ریزی استراتژیک</div>
+                    <div class="feature">📚 متدهای آموزشی نوین</div>
+                    <div class="feature">🏆 موفقیت در کنکور</div>
+                    <div class="feature">💡 کشف استعدادها</div>
+                    <div class="feature">🤝 تقویت همکاری</div>
+                    <div class="feature">📖 ترویج کتابخوانی</div>
+                </div>
+            </div>
+
+            <div class="bottom-box">
+                <div class="text">
+                    <h2 class="section-title">درباره دبیرستان مهر اول</h2>
+                    <p>
+                        مهر اول با سال‌ها تجربه آموزشی و تلاش مستمر، محیطی پویا برای رشد علمی و شخصیتی دانش‌آموزان فراهم کرده است. هدف ما پرورش نسلی آگاه، هدفمند و توانمند است.
+                    </p>
+                    <ul>
+                        <li>رشد فردی و علمی دانش‌آموزان</li>
+                        <li>تقویت مهارت‌های زندگی</li>
+                        <li>افزایش اعتماد به نفس و مسئولیت‌پذیری</li>
+                        <li>هدایت به سمت اهداف بزرگ</li>
+                    </ul>
+                    <div class="quote">
+                        ما در مهر اول، فقط آموزش نمی‌دهیم؛ آینده می‌سازیم
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="{% static 'website/img/about/mehr.webp' %}" alt="مدرسه مهر اول">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- سوالات متداول -->
+    <section class="faq-section">
+        <h2 class="section-title">سوالات متداول</h2>
+        <p class="faq-desc">پاسخ پرتکرارترین سوالات درباره ثبت‌نام و خدمات مهر اول</p>
+        <div class="faq-grid">
+            <div class="faq-box">
+                <h3>شرایط ثبت‌نام چگونه است؟</h3>
+                <p>ثبت‌نام از طریق مراجعه حضوری یا تماس با مدرسه انجام می‌شود.</p>
+            </div>
+            <div class="faq-box">
+                <h3>آیا مشاور تحصیلی دارید؟</h3>
+                <p>برای هر دانش‌آموز مشاور و پشتیبان اختصاصی در نظر گرفته شده است.</p>
+            </div>
+            <div class="faq-box">
+                <h3>ساعات برگزاری کلاس‌ها چگونه است؟</h3>
+                <p>کلاس‌ها در شیفت صبح برگزار شده و برنامه کامل ارائه می‌شود.</p>
+            </div>
+            <div class="faq-box">
+                <h3>چه امکاناتی در مدرسه وجود دارد؟</h3>
+                <p>امکانات آموزشی کامل، اساتید مجرب و برنامه‌ریزی دقیق آموزشی.</p>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock footer %}

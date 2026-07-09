@@ -1,0 +1,355 @@
+{% extends "header.html" %}
+{% comment %} ===== VERSION GHABLI =====
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        test
+    </p>
+</body>
+</html>
+===== ENTEHAYE VERSION GHABLI ===== {% endcomment %}
+
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+    <!-- start header -->
+    <header class="header">
+        <div class="header_box">
+            <p class="header_title1">پرسش هر چه باشد ،پاسخ آموزش است</p>
+            <p class="header_title2">همین الان <br> مهر اولی شو</p>
+            <a href="{% url "website:prerigester" %}" class="header_link1">پیش ثبت نام</a>
+        </div>  
+    </header>
+    <!-- end header -->
+
+    <!-- start info -->
+    <section class="about">
+        <div class="container">
+            
+            <!-- TOP SECTION -->
+            <div class="about-top">
+            
+            <!-- IMAGE -->
+            <div class="about-image">
+                <img src="{% static 'website/img/01.webp' %}" alt="دانش‌آموزان دبیرستان مهر اول">
+            </div>
+
+            <!-- TEXT -->
+            <div class="about-text">
+                <h3>مهر اول، بهترین دبیرستان</h3>
+                <h2>جایی برای رشد علمی، شخصیتی و آینده‌ساز</h2>
+                
+                <p>
+                مهر اول یکی از برترین دبیرستان‌های استان البرز است که با بهره‌گیری از
+                اساتید مجرب و امکانات آموزشی مدرن، محیطی آرام و حرفه‌ای برای رشد دانش‌آموزان فراهم کرده است.
+                </p>
+
+                <p>
+                هدف ما پرورش دانش‌آموزانی توانمند، خلاق و مسئولیت‌پذیر است تا بتوانند
+                آینده‌ای روشن برای خود و جامعه بسازند.
+                </p>
+            </div>
+
+            </div>
+
+            <!-- EDUCATION SPACE -->
+            <div class="edu">
+            <h2>فضای آموزشی</h2>
+
+            <div class="edu-cards">
+                <div class="card">
+                <span>👨‍🎓</span>
+                <h3>1500</h3>
+                <p>فارغ‌التحصیل</p>
+                </div>
+
+                <div class="card">
+                <span>🎓</span>
+                <h3>13</h3>
+                <p>کلاس</p>
+                </div>
+
+                <div class="card">
+                <span>🏢</span>
+                <h3>3</h3>
+                <p>طبقه</p>
+                </div>
+
+                <div class="card">
+                <span>📐</span>
+                <h3>400</h3>
+                <p>متر زیربنا</p>
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- end info -->
+
+    <!-- start journal -->
+    <section class="features">
+
+        <h2 class="title">
+            پرسش هرچه باشد، پاسخ <span>آموزش</span> است.
+        </h2>
+
+        <div class="items">
+
+            <!-- ITEM 1 -->
+            <div class="item">
+            <div class="icon">
+                📖
+            </div>
+
+            <h3>نشریه‌ی فانوس</h3>
+
+            <a href="#" class="link">
+                مشاهده بیشتر ←
+            </a>
+            </div>
+
+            <!-- ITEM 2 -->
+            <div class="item">
+            <div class="icon">
+                🏆
+            </div>
+
+            <h3>افتخارات ما</h3>
+
+            <a href="#" class="link">
+                مشاهده بیشتر ←
+            </a>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- end journal -->
+
+    <!-- start gallery -->
+    <section class="gallery">
+
+    <div class="gallery-header">
+        <!-- <span class="tag">گالری تصاویر</span> -->
+        <h2>
+        محیطی برای <span>یادگیری، رشد و تجربه</span>
+        </h2>
+        <p>مجموعه‌ای از تصاویر واقعی از فضای آموزشی و محیط مدرسه ما.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+        <img src="{% static 'website/img/gallery/IMG_20260603_165250.webp' %}" alt="فضای آموزشی دبیرستان مهر اول">
+        <img src="{% static 'website/img/gallery/IMG_20260603_165316.webp' %}" alt="کلاس درس دبیرستان مهر اول">
+        <img src="{% static 'website/img/gallery/IMG_20260603_165322.webp' %}" alt="محیط مدرسه مهر اول">
+        <img src="{% static 'website/img/gallery/IMG_20260603_165330.webp' %}" alt="راهروی دبیرستان مهر اول">
+        <img src="{% static 'website/img/gallery/IMG_20260603_165332 (1).webp' %}" alt="سالن دبیرستان مهر اول">
+        <img src="{% static 'website/img/gallery/IMG_20260603_165338.webp' %}" alt="نمایی از دبیرستان مهر اول کرج">
+
+    </div>
+
+    <!-- <div class="gallery-btn">
+        <a href="#">📷 مشاهده بیشتر تصاویر</a>
+    </div> -->
+
+    </section>
+    <!-- end gallery -->
+
+    <!-- start contact -->
+    <section class="cta">
+
+        <!-- TOP BOX -->
+        <div class="cta-box light">
+            <h2>برای هر اولین شدن تنها چند قدم با ما فاصله دارید</h2>
+            <a href="#" class="btn">
+            📞 با ما تماس بگیرید
+            </a>
+        </div>
+
+        <!-- BOTTOM BOX -->
+        <div class="cta-box red">
+            <h2>برای آشنایی بیشتر با مهر اول کلیک نمایید</h2>
+            <a href="{% url "website:about" %}" class="circle-btn">←</a>
+        </div>
+
+    </section>
+    <!-- end contact -->
+
+    <!-- start article  -->
+    <section class="articles">
+
+        <!-- <div class="articles-header">
+            <span>آخرین مقالات</span>
+            <h2>مطالبی برای <span>یادگیری و پیشرفت</span></h2>
+            <p>جدیدترین مقالات آموزشی، تجربی و خبری را در این بخش بخوانید.</p>
+        </div> -->
+
+        <div class="articles-grid">
+
+            <!-- CARD -->
+            <div class="card">
+            <img src="{% static 'website/img/article/شروع مطالعه.webp' %}" alt="شروع مطالعه برای کنکور">
+            <div class="content">
+                <!-- <span class="date">۱۸ آبان ۱۴۰۲</span> -->
+                <h3>شروع مطالعه برای کنکور</h3>
+                <p>شروع مطالعه برای کنکور یک موضوع مهم است که ذهن بسیاری را درگیر می‌کند...</p>
+                <a href="{% url 'articles:article3' %}">بیشتر بخوانید ←</a>
+            </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="card">
+            <img src="{% static 'website/img/article/ریاضی یا تجربی.webp' %}" alt="انتخاب رشته ریاضی یا تجربی">
+            <div class="content">
+                <!-- <span class="date">۱۸ آبان ۱۴۰۲</span> -->
+                <h3>ریاضی یا تجربی</h3>
+                <p>انتخاب رشته یکی از مهم‌ترین تصمیمات تحصیلی است که آینده شما را شکل می‌دهد...</p>
+                <a href="{% url 'articles:article1' %}">بیشتر بخوانید ←</a>
+            </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="card">
+            <img src="{% static 'website/img/article/مدرسه خوب.webp' %}" alt="ویژگی‌های مدرسه خوب">
+            <div class="content">
+                <!-- <span class="date">۱۸ آبان ۱۴۰۲</span> -->
+                <h3>ویژگی مدرسه خوب</h3>
+                <p>یک مدرسه خوب فضایی برای رشد و یادگیری دانش‌آموزان فراهم می‌کند...</p>
+                <a href="{% url 'articles:article2' %}">بیشتر بخوانید ←</a>
+            </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="card">
+            <img src="{% static 'website/img/article/موفقیت.webp' %}" alt="موفقیت در کنکور">
+            <div class="content">
+                <!-- <span class="date">۱۸ آبان ۱۴۰۲</span> -->
+                <h3>موفقیت در کنکور</h3>
+                <p>موفقیت در کنکور نیازمند برنامه‌ریزی دقیق و تلاش مستمر است...</p>
+                <a href="{% url 'articles:article5' %}">بیشتر بخوانید ←</a>
+            </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="card">
+            <img src="{% static 'website/img/article/شبکه اجتماعی.webp' %}" alt="تاثیر شبکه‌های اجتماعی بر دانش‌آموزان">
+            <div class="content">
+                <!-- <span class="date">۱۸ آبان ۱۴۰۲</span> -->
+                <h3>تاثیر شبکه‌های اجتماعی</h3>
+                <p>شبکه‌های اجتماعی تاثیر زیادی بر سبک زندگی دانش‌آموزان دارند...</p>
+                <a href="{% url "articles:article6" %}">بیشتر بخوانید ←</a>
+            </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="card highlight">
+            <img src="{% static 'website/img/article/تابستان.webp' %}" alt="همایش جمع‌بندی تابستان">
+            <div class="content">
+                <!-- <span class="date">۶ آبان ۱۴۰۲</span> -->
+                <h3>همایش جمع‌بندی تابستان</h3>
+                <p>یکی از رویدادهای مهم آموزشی که با حضور مشاوران برگزار شد...</p>
+                <a href="{% url "articles:article4" %}">بیشتر بخوانید ←</a>
+            </div>
+            </div>
+            <!-- CARD -->
+            <div class="card highlight">
+            <img src="{% static 'website/img/article/تابستان.webp' %}" alt="بهترین دبیرستان کرج">
+            <div class="content">
+                <!-- <span class="date">۶ آبان ۱۴۰۲</span> -->
+                <h3>بهترین مدرسه کرج</h3>
+                <p>یکی از رویدادهای مهم آموزشی که با حضور مشاوران برگزار شد...</p>
+                <a href="{% url "articles:article7" %}">بیشتر بخوانید ←</a>
+            </div>
+            </div>
+
+        </div>
+
+        <div class="more-btn">
+            <a href="#">مشاهده همه مطالب</a>
+        </div>
+
+    </section>
+    <!-- end article  -->
+{% if messages %}
+    <div style="position: fixed; top: 100px; right: 20px; left: 20px; z-index: 9999; direction: rtl;">
+        {% for message in messages %}
+            <div class="alert-message" style="
+                background-color: #4CAF50;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                margin-bottom: 10px;
+                text-align: center;
+                font-family: 'Vazirmatn', sans-serif;
+                font-size: 16px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                animation: slideDown 0.5s ease;
+            ">
+                {{ message }}
+                <button onclick="this.parentElement.style.display='none'" style="
+                    float: left;
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 20px;
+                    cursor: pointer;
+                    font-weight: bold;
+                ">×</button>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        // بعد از 3 ثانیه پیام محو شود
+        setTimeout(function() {
+            var messages = document.querySelectorAll('.alert-message');
+            messages.forEach(function(message) {
+                message.style.opacity = '0';
+                message.style.transition = 'opacity 0.5s';
+                setTimeout(function() {
+                    message.style.display = 'none';
+                }, 500);
+            });
+        }, 3000);
+    </script>
+{% endif %}
+     <!-- start footer  -->
+{% endblock content %}
+
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock footer %}
+        <!-- end footer -->
+        <!-- menu responsive for mobile -->
+        {% block extra_js %}
+        
+         <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const toggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.nav-menu');
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function () {
+                    menu.classList.toggle('active');
+                });
+            } else {
+                console.log("menu-toggle یا nav-menu پیدا نشد ❌");
+            }
+
+        });
+        </script>
+        {% endblock %}
+        <!-- menu responsive for mobile end  -->
+</body>
+</html>

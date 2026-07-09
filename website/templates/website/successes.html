@@ -1,0 +1,113 @@
+{% extends 'header.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        {% comment %} {% block title %}موفقیت ها{% endblock title %} {% endcomment %}
+{% block title %}موفقیت‌های کنکور | دبیرستان مهر اول{% endblock title %}
+{% block meta_description %}<meta name="description" content="افتخارات و موفقیت‌های دانش‌آموزان دبیرستان مهر اول کرج در کنکور سراسری - رتبه‌های برتر در رشته‌های ریاضی، تجربی، انسانی و هنر." />{% endblock %}
+{% block og_title %}موفقیت‌های کنکور | دبیرستان مهر اول{% endblock %}
+{% block og_description %}افتخارات و موفقیت‌های دانش‌آموزان دبیرستان مهر اول در کنکور سراسری{% endblock %}
+        {% block extra_css %}
+        <link rel="stylesheet" href="{% static 'website/css/successes_style.css' %}">
+        {% endblock extra_css %}
+{% block content %}
+
+        <section class="hero">
+
+        <div class="hero-top">
+            <div class="hero-text">
+            <h1>موفقیت های کنکور</h1>
+            <p>افتخار ما، موفقیت دانش‌آموزان ماست.</p>
+            </div>
+
+            <div class="logo">
+            <img src="{% static 'website/img/successes/logo.webp' %}" alt="موفقیت‌های دبیرستان مهر اول">
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="card">
+            <h3>+300</h3>
+            <p>دانش‌آموز پذیرفته شده</p>
+            </div>
+
+            <div class="card">
+            <h3>+30</h3>
+            <p>دانشگاه برتر</p>
+            </div>
+
+            <div class="card">
+            <h3>+100</h3>
+            <p>رتبه زیر 1000</p>
+            </div>
+
+            <div class="card">
+            <h3>95%</h3>
+            <p>قبولی در دانشگاه برتر</p>
+            </div>
+        </div>
+
+        <div class="filters">
+    <button onclick="window.location.href='{% url 'website:successes' %}'" class="{% if not selected_field %}active{% endif %}">
+        همه رشته‌ها
+    </button>
+    <button onclick="window.location.href='{% url 'website:successes' %}?field=math'" class="{% if selected_field == 'math' %}active{% endif %}">
+        ریاضی
+    </button>
+    <button onclick="window.location.href='{% url 'website:successes' %}?field=experimental'" class="{% if selected_field == 'experimental' %}active{% endif %}">
+        تجربی
+    </button>
+    <button onclick="window.location.href='{% url 'website:successes' %}?field=humanities'" class="{% if selected_field == 'humanities' %}active{% endif %}">
+        انسانی
+    </button>
+    <button onclick="window.location.href='{% url 'website:successes' %}?field=art'" class="{% if selected_field == 'art' %}active{% endif %}">
+        هنر
+    </button>
+        </div>
+
+        </section>
+
+
+        <section class="students">
+        <h2>افتخار آفرینان مهر اول</h2>
+
+        <div class="grid">
+            {% for student in successes %}
+            <div class="student">
+            <div class="img-box">
+                <img src="{{ student.image.url }}" alt="{{ student.name }}">
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        
+        </section>
+
+    </body>
+</html>
+{% endblock content %}
+{% block footer %}
+  {% include 'footer.html' %}
+{% endblock footer %}
+        {% block extra_js %}
+        
+         <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const toggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.nav-menu');
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function () {
+                    menu.classList.toggle('active');
+                });
+            } else {
+                console.log("menu-toggle یا nav-menu پیدا نشد ❌");
+            }
+
+        });
+        </script>
+        {% endblock %}

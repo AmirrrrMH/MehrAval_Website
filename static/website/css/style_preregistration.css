@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Vazirmatn", sans-serif;
+}
+
+.part{
+    min-height:100dvh;
+    min-height:100svh;
+    padding: 40px 15px;
+    margin: 0;
+    background-image: url('../img/roof2.webp'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+width: 100%;
+max-width: 600px;
+margin: auto;
+background: #fff;
+padding: 25px 20px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+h2 {
+    text-align: center;
+    color: #8b0308;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+input, select, textarea {
+width: 100%; 
+padding: 12px;
+margin-top: 6px;
+border: 1px solid #ccc;
+border-radius: 8px;
+font-size: 14px;
+box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+margin-top: 25px;
+padding: 12px;
+width: 100%;
+border: none;
+border-radius: 8px;
+background: #8b0308;
+color: white;
+font-size: 15px;
+cursor: pointer;
+font-family: "Vazirmatn", sans-serif;
+box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+transition: 0.3s;
+}
+
+
+.progress {
+display: flex;
+gap: 5px;
+margin-bottom: 20px;
+}
+
+
+.progress div {
+flex: 1;
+height: 8px;
+background: #ddd;
+border-radius: 5px;
+transition: 0.3s;
+}
+
+.progress .active {
+    background: #8b0308;
+}
+
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+
+
+button:hover {
+    background: #7b0000; 
+    transform: translateY(-2px); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+
+
+
+input,
+textarea,
+select {
+outline: none;
+border: 1.5px solid #8b0308;
+}
+
+::placeholder {
+font-family: "Vazirmatn", sans-serif;
+font-size: 13px;
+color: #888;
+}
+
+
+@media (max-width: 768px) {
+
+.part {
+    padding: 40px 15px;
+}
+
+.container {
+    padding: 20px 15px;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+label {
+    font-size: 13px;
+}
+
+input, textarea {
+    font-size: 13px;
+    padding: 10px;
+}
+
+button {
+    font-size: 14px;
+    padding: 10px;
+}
+
+}
+
+
+@media (max-width: 480px) {
+
+.container {
+    padding: 15px 12px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+button {
+    margin-top: 20px;
+}
+
+}
+

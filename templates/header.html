@@ -1,0 +1,217 @@
+{% comment %} {% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        مهر اول
+      {% endblock %}
+    </title>
+
+    <!-- فونت‌ها -->
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Vazirmatn:wght@100..900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+
+    {% block extra_css %}
+    {% endblock %}
+  </head>
+  <body>
+    <section class="main-header">
+      <div class="header-container">
+        <div class="header-left">
+          <a href="#" class="contact-btn">تماس با ما</a>
+        </div>
+
+        <nav class="nav-menu">
+          <ul>
+            <li>
+              <a href="{% url 'website:home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">صفحه اصلی</a>
+            </li>
+            <li>
+              <a href="{% url 'website:about' %}" class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">درباره مدرسه</a>
+            </li>
+            <li>
+              <a href="{% url 'website:where-x' %}" class="nav-link {% if request.resolver_match.url_name == 'where-x' %}active{% endif %}">جای x ات کجاست؟</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link">اساتید ما</a>
+            </li>
+            <li>
+              <a href="{% url 'website:successes' %}" class="nav-link {% if request.resolver_match.url_name == 'successes' %}active{% endif %}">موفقیت‌ها</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-right">
+          <a href="{% url 'website:home' %}" class="logo-area"><span class="logo-text">دبیرستان <span class="highlight">مهر اول</span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+
+    {% block footer %}
+    {% endblock %}
+
+    {% block extra_js %}
+    {% endblock %}
+  </body>
+</html> {% endcomment %}
+
+{% comment %} ===== VERSION GHABLI ===== {% endcomment %}
+{% comment %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        مهر اول
+      {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Vazirmatn:wght@100..900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+    {% block extra_css %}
+    {% endblock %}
+  </head>
+{% endcomment %}
+{% comment %} ===== ENTEHAYE VERSION GHABLI ===== {% endcomment %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+    <title>
+      {% block title %}
+        مهر اول | دبیرستان پسرانه غیرانتفاعی در کرج
+      {% endblock %}
+    </title>
+
+    {% block meta_description %}
+    <meta name="description" content="دبیرستان پسرانه مهر اول کرج - بهترین مدرسه غیرانتفاعی استان البرز با اساتید مجرب، مشاوران تحصیلی و برنامه‌ریزی آموزشی نوین. پیش‌ثبت‌نام آنلاین." />
+    {% endblock %}
+
+    <link rel="canonical" href="{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="دبیرستان مهر اول" />
+    <meta property="og:title" content="{% block og_title %}مهر اول | دبیرستان پسرانه غیرانتفاعی در کرج{% endblock %}" />
+    <meta property="og:description" content="{% block og_description %}دبیرستان پسرانه مهر اول کرج - بهترین مدرسه غیرانتفاعی استان البرز{% endblock %}" />
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+    {% block og_image %}<meta property="og:image" content="{% static 'website/img/logo.webp' %}" />{% endblock %}
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "دبیرستان مهر اول",
+      "alternateName": "Mehr Aval High School",
+      "url": "{{ request.build_absolute_uri }}",
+      "logo": "{% static 'website/img/logo.webp' %}",
+      "description": "دبیرستان پسرانه غیرانتفاعی مهر اول کرج - یکی از برترین مدارس استان البرز",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "کرج، گوهردشت، بلوار ملاصدرا، بلوار استقلال شمالی، کوچه اسماعیل مسلمی",
+        "addressLocality": "کرج",
+        "addressRegion": "البرز",
+        "addressCountry": "IR"
+      },
+      "telephone": "026-354-36-34",
+      "foundingDate": "1391",
+      "founder": {
+        "@type": "Person",
+        "name": "هاشم میرزایی"
+      }
+    }
+    </script>
+
+    <link rel="preload" as="image" href="{% static 'website/img/base.webp' %}" fetchpriority="high" />
+
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Vazirmatn:wght@100..900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+    {% block extra_css %}
+    {% endblock %}
+  </head>
+  <body>
+    <!-- start menu -->
+    <section class="main-header">
+      <div class="header-container">
+        <!-- ریسپانسیو برای موبایل -->
+        <div class="menu-toggle">☰</div>
+        <!-- <nav class="nav-menu"></nav> -->
+        <!-- پایان ریسپانسیو موبایل -->
+        <div class="header-right">
+          <span class="logo-text">دبیرستان <span class="highlight">مهر اول</span></span>
+          <img src="{% static 'website/img/logo.webp' %}" alt="دبیرستان مهر اول" class="logo-area" />
+        </div>
+        
+
+        <nav class="nav-menu">
+          <ul>
+            <li>
+              <a href="{% url 'website:home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">صفحه اصلی</a>
+            </li>
+            <li>
+              <a href="{% url 'website:about' %}" class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">درباره مدرسه</a>
+            </li>
+            <li>
+              <a href="{% url 'website:where-x' %}" class="nav-link {% if request.resolver_match.url_name == 'where-x' %}active{% endif %}">جای x ات کجاست؟</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link">اساتید ما</a>
+            </li>
+            <li>
+              <a href="{% url 'website:successes' %}" class="nav-link {% if request.resolver_match.url_name == 'successes' %}active{% endif %}">موفقیت‌ها</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-left">
+          <a href="#" class="contact-btn">
+            <i class="contact-icon"></i>
+            تماس با ما
+          </a>
+        </div>
+      </div>
+    </section>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+    {% block footer %}
+    {% endblock %}
+
+    {% block extra_js %}
+    {% endblock %}
+  </body>
+</html>

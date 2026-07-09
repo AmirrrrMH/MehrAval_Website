@@ -1,0 +1,438 @@
+/* start header */
+.about-header-box{
+    height: 100%;
+    margin: 0 auto;
+}
+
+.about-header-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-header-img{
+    width: 100%;
+}
+/* end header */
+
+/* start about */
+.about-page {
+  direction: rtl;
+  text-align:right;
+}
+
+.about-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+}
+
+/* ستون‌ها */
+.about_school,
+.equipment {
+  flex: 1;
+}
+
+/* تصویر */
+.about_img,
+.equipment img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* متن اصلی */
+.about_text {
+  line-height: 2;
+  color: rgba(0,0,0,0.7);
+  font-size: 16px;
+  padding-top: 30px;
+}
+
+/* بخش تجهیزات */
+
+.equipment_text{
+  padding-right: 40px;
+}
+
+.equipment_text h4 {
+  margin: 15px 0;
+  font-size: 18px;
+  color: #8b0305;
+}
+
+.equipment_text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.equipment_text li {
+  margin-bottom: 10px;
+  padding-right: 18px;
+  position: relative;
+}
+
+.equipment_text li::before {
+  content: "✔";
+  position: absolute;
+  right: 0;
+  color: #2ecc71;
+  font-size: 14px;
+}
+
+/* موبایل */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .about_text {
+    font-size: 15px;
+  }
+}
+/* end about */
+
+/* start rate */
+.stats-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-section-title {
+  font-size: 30px;
+  font-family: "Zain", sans-serif;
+  color: #8b0000;
+  margin-bottom: 20px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: #f8f8f8;
+  padding: 30px 40px;
+  border-radius: 20px;
+  width: 220px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.stat:hover {
+  transform: translateY(-10px);
+}
+
+.about-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 500;
+  color: #8b0000;
+  display: inline-block;
+}
+
+.stat-number::after {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 2px;
+  background: #8b0000;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.stat-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333333c4;
+}
+/* end rate */
+
+/* start sport */
+.about-part{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.about-title{
+    margin-top: 60px;
+}
+
+.about-title-text{
+    color: #8b0305;
+    font-family: "Zain", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.541);
+    text-align: center;
+    padding: 10px;
+    display: block;
+}
+
+.about-pics{
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-pic{
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.about-pic img{
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.about-pic p{
+    font-size: 20px;
+    font-weight: 600;
+    color: #8b0305;
+    margin-top: 15px;
+}
+
+.about-pic:hover{
+    transform: translateY(-8px);
+    transition-duration: 0.3s;
+}
+/* end sport */
+
+/* start goals */
+.about-goals {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  font-family: sans-serif;
+}
+
+.about-goals-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-section-title {
+  color: #8b0000;
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.about-top-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.about-desc {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.about-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.about-feature {
+  background: #f3f3f3;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.about-bottom-box {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text ul {
+  margin-top: 15px;
+  padding-right: 18px;
+}
+
+.about-text li {
+  margin-bottom: 8px;
+  text-align: right;
+  list-style-type: none;
+}
+
+.about-text p {
+  text-align: right;
+  line-height: 1.6;
+}
+
+.quote {
+  margin-top: 20px;
+  background: #8b0000;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.about-text,
+.about-image {
+  flex: 1 1 48%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .about-section-title {
+    font-size: 26px;
+  }
+
+  .about-bottom-box {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .about-goals {
+    padding: 40px 15px;
+  }
+
+  .about-section-title {
+    font-size: 22px;
+  }
+
+  .about-top-box {
+    padding: 20px;
+  }
+
+  .about-bottom-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-text p,
+  .about-text li {
+    text-align: center;
+  }
+
+  .about-features {
+    gap: 10px;
+  }
+
+  .about-feature {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .quote {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+/* end goals */
+
+/* start questions */
+.about-faq-section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.about-section-title {
+  text-align: center;
+  font-size: 30px;
+  color: #8b0000;
+  margin-bottom: 10px;
+}
+
+.about-section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #8b0000;
+  margin: 8px auto 0;
+}
+
+.about-faq-desc {
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.faq-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  transition: 0.3s;
+  text-align: right;
+}
+
+.faq-box:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transform: translateY(-5px);
+}
+
+.faq-box h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #8b0000;
+}
+
+.faq-box p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* end questions */

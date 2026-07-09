@@ -1,0 +1,16 @@
+ <!-- فرم دیدگاه -->
+  <section class="comments">
+    <h3>ارسال دیدگاه</h3>
+    <form method="post">
+        {% csrf_token %}
+      <div class="row">
+        <input name="name" type="text" placeholder="نام">
+        <input name="family" type="text" placeholder="نام خانوادگی">
+        <input name="email" type="email" placeholder="ایمیل">
+      </div>
+
+      <textarea name="viewpoint" placeholder="دیدگاه خود را بنویسید..."></textarea>
+
+      <button type="submit">ارسال دیدگاه</button>
+    </form>
+  </section>
