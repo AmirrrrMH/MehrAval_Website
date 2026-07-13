@@ -45,8 +45,12 @@
     width: 50px;
     height: 55px;
 }
+.header-right a {
+  text-decoration: none; 
+}
 
 .logo-text {
+    text-decoration: none;
     font-size: 1.3rem;
     font-weight: 800;
     color: var(--text-dark);
@@ -57,12 +61,14 @@
 }
 
 .logo-text .highlight {
+    text-decoration: none;
     color: var(--primary-color);
-     font-family: "Zain", sans-serif;
+    font-family: "Zain", sans-serif;
 
 }
 
 .header-right{
+  text-decoration: none;
   display: flex;
   
 }
