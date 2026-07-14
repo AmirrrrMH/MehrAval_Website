@@ -370,6 +370,11 @@ body {
 .about {
   padding: 60px 0;
 }
+.header_title1,
+.header_title2,
+.header_link1 {
+    margin-right: 40px;
+}
 
 .about-top {
   display: flex;
