@@ -6,6 +6,9 @@
 }
 
 /* start menu  */
+html {
+    scroll-behavior: smooth;
+}
 
 :root {
     --primary-color: #7a121d; 
