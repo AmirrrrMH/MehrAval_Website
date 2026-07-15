@@ -54,6 +54,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -62,6 +63,7 @@ body {
   border-radius: 15px;
   width: 200px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+  text-align: center;
 }
 
 .card h3 {
@@ -72,6 +74,29 @@ body {
 .card p {
   color: gray;
   font-size: 14px;
+}
+
+/* تبلت */
+@media (max-width: 768px) {
+  .card {
+    width: 45%; 
+  }
+}
+
+/* موبایل */
+@media (max-width: 480px) {
+  .card {
+    width: 48%;
+    padding: 15px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
 }
 
 /* FILTER */
