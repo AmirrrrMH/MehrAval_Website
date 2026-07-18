@@ -120,4 +120,4 @@ def teachers(request):
         "selected_field": selected_field,
     }
 
-    return render(request, "teachers.html", context)
+    return render(request, "website/teachers.html", context)
