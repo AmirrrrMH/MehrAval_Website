@@ -28,8 +28,12 @@ urlpatterns = [
     path("contact/", RedirectView.as_view(pattern_name="website:where-x", permanent=True)),
     path("we/", RedirectView.as_view(pattern_name="website:about", permanent=True)),
     path("موفقیت-ها/", RedirectView.as_view(pattern_name="website:successes", permanent=True)),
-    path("پیش-ثبت-نام/", RedirectView.as_view(pattern_name="website:prerigester", permanent=True)),
+    path("پیش-ثبت-نام/",
+         RedirectView.as_view(pattern_name="website:prerigester", permanent=True)),
     path("پایه-ی-دهم/", RedirectView.as_view(pattern_name="website:home", permanent=True)),
-    path("سوالات-متداول-مهراول/", RedirectView.as_view(pattern_name="website:home", permanent=True)),
-    path("elementor-10144/", RedirectView.as_view(pattern_name="website:home", permanent=True)),
-]   
+    path("اساتید/", RedirectView.as_view(pattern_name="website:teachers", permanent=True)),
+    path("سوالات-متداول-مهراول/",
+         RedirectView.as_view(pattern_name="website:home", permanent=True)),
+    path("elementor-10144/",
+         RedirectView.as_view(pattern_name="website:home", permanent=True)),
+]
