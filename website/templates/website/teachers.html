@@ -1,0 +1,139 @@
+{% extends 'header.html' %}
+{% load static %}
+
+{% block title %}اساتید دبیرستان مهر اول | کادر آموزشی{% endblock title %}
+
+{% block meta_description %}
+<meta name="description" content="آشنایی با اساتید مجرب دبیرستان مهر اول کرج. تیم آموزشی متشکل از دبیران با تجربه در رشته‌های ریاضی، تجربی، انسانی، زبان و دروس تخصصی." />
+{% endblock %}
+
+{% block og_title %}اساتید دبیرستان مهر اول{% endblock %}
+{% block og_description %}آشنایی با کادر آموزشی و اساتید مجرب دبیرستان مهر اول{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'website/css/teachers_style.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+    <div class="overlay"></div>
+
+    <div class="content">
+        <h1>اساتید مدرسه</h1>
+        <p>تیمی از معلمان مجرب و متعهد در کنار شما</p>
+
+        <div class="line-box">
+            <span class="icon">🎓</span>
+            <span class="line"></span>
+        </div>
+    </div>
+
+    <div class="curve"></div>
+</section>
+
+<!-- TEACHERS -->
+<section class="teachers">
+
+    <div class="container">
+
+        <h2>اساتید ما</h2>
+        <p class="subtitle">
+            اساتید با تجربه همراه مسیر یادگیری شما هستند
+        </p>
+
+        <!-- FILTER -->
+        <div class="filters">
+
+            <button onclick="window.location.href='{% url "website:teachers" %}'"
+                class="{% if not selected_field %}active{% endif %}">
+                همه
+            </button>
+
+            <button onclick="window.location.href='{% url "website:teachers" %}?field=math'"
+                class="{% if selected_field == 'math' %}active{% endif %}">
+                ریاضی
+            </button>
+
+            <button onclick="window.location.href='{% url "website:teachers" %}?field=science'"
+                class="{% if selected_field == 'science' %}active{% endif %}">
+                علوم
+            </button>
+
+            <button onclick="window.location.href='{% url "website:teachers" %}?field=humanities'"
+                class="{% if selected_field == 'humanities' %}active{% endif %}">
+                انسانی
+            </button>
+
+        </div>
+
+        <!-- GRID -->
+        <div class="teachers-grid">
+
+            {% for teacher in teachers %}
+
+            <div class="card">
+
+                <img src="{{ teacher.image.url }}" alt="{{ teacher.name }}">
+
+                <h3>{{ teacher.name }}</h3>
+
+                <span class="teacher-divider"></span>
+
+                <span>{{ teacher.subject }}</span>
+
+            </div>
+
+            {% empty %}
+
+            <p class="empty">
+                هنوز استادی ثبت نشده است.
+            </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+
+    <div class="cta-content">
+        <p>
+            ما معتقدیم هر دانش‌آموز آینده‌ساز است.
+            با راهنمایی اساتید مجرب، به بهترین نسخه خودتان تبدیل شوید.
+        </p>
+    </div>
+
+    <span class="quote-line"></span>
+
+</section>
+
+{% endblock content %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+
+{% block extra_js %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".nav-menu");
+
+    if (toggle && menu) {
+        toggle.addEventListener("click", function () {
+            menu.classList.toggle("active");
+        });
+    }
+
+});
+</script>
+
+{% endblock %}

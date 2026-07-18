@@ -15,7 +15,7 @@ from django.urls import reverse
 from website.forms import CreateUserForm
 from django.contrib import messages
 from articles.models import Article
-from website.models import Success
+from website.models import Success, Teacher
 
 
 # Create your views here.
@@ -106,3 +106,18 @@ def sitemap_xml(request):
         xml += "  </url>\n"
     xml += "</urlset>"
     return HttpResponse(xml, content_type="application/xml")
+
+def teachers(request):
+    selected_field = request.GET.get("field")
+
+    teachers = Teacher.objects.all()
+
+    if selected_field:
+        teachers = teachers.filter(field=selected_field)
+
+    context = {
+        "teachers": teachers,
+        "selected_field": selected_field,
+    }
+
+    return render(request, "teachers.html", context)

@@ -190,7 +190,7 @@
               <a href="{% url 'website:where-x' %}" class="nav-link {% if request.resolver_match.url_name == 'where-x' %}active{% endif %}">جای x ات کجاست؟</a>
             </li>
             <li>
-              <a href="#" class="nav-link">اساتید ما</a>
+              <a href="{% url 'website:teachers' %}" class="nav-link {% if request.resolver_match.url_name == 'teachers' %}active{% endif %}">اساتید ما</a>
             </li>
             <li>
               <a href="{% url 'website:successes' %}" class="nav-link {% if request.resolver_match.url_name == 'successes' %}active{% endif %}">موفقیت‌ها</a>

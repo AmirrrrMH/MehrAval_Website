@@ -50,3 +50,73 @@ class Success(models.Model):
 
     def __str__(self):
         return self.student_name
+
+
+class Teacher(models.Model):
+
+    FIELD_CHOICES = [
+        ("math", "ریاضی"),
+        ("science", "علوم"),
+        ("humanities", "انسانی"),
+        ("language", "زبان"),
+        ("other", "سایر"),
+    ]
+
+    name = models.CharField(max_length=100, verbose_name="نام استاد")
+
+    slug = models.SlugField(
+        unique=True,
+        blank=True,
+        verbose_name="آدرس صفحه"
+    )
+
+    subject = models.CharField(max_length=100, verbose_name="درس")
+
+    field = models.CharField(
+        max_length=20,
+        choices=FIELD_CHOICES,
+        verbose_name="گروه آموزشی"
+    )
+
+    image = models.ImageField(
+        upload_to="teachers/",
+        verbose_name="تصویر"
+    )
+
+    short_description = models.CharField(
+        max_length=200,
+        blank=True,
+        verbose_name="توضیح کوتاه"
+    )
+
+    biography = models.TextField(
+        blank=True,
+        verbose_name="بیوگرافی"
+    )
+
+    experience = models.PositiveIntegerField(
+        blank=True,
+        null=True,
+        verbose_name="سابقه تدریس"
+    )
+
+    priority = models.PositiveIntegerField(
+        default=0,
+        verbose_name="ترتیب نمایش"
+    )
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="فعال"
+    )
+
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["priority", "name"]
+        verbose_name = "استاد"
+        verbose_name_plural = "اساتید"
+
+    def __str__(self):
+        return self.name
