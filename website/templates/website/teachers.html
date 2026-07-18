@@ -4,7 +4,7 @@
 {% block title %}اساتید دبیرستان مهر اول | کادر آموزشی{% endblock title %}
 
 {% block meta_description %}
-<meta name="description" content="آشنایی با اساتید مجرب دبیرستان مهر اول کرج. تیم آموزشی متشکل از دبیران با تجربه در رشته‌های ریاضی، تجربی، انسانی، زبان و دروس تخصصی." />
+<meta name="description" content="آشنایی با اساتید مجرب دبیرستان مهر اول کرج. تیم آموزشی متشکل از دبیران با تجربه در رشته‌های ریاضی، تجربی، انسانی، زبان و دروس تخصصی.">
 {% endblock %}
 
 {% block og_title %}اساتید دبیرستان مهر اول{% endblock %}
@@ -17,51 +17,58 @@
 {% block content %}
 
 <!-- HERO -->
-<section class="hero">
-    <div class="overlay"></div>
+<section class="sch-hero">
 
-    <div class="content">
-        <h1>اساتید مدرسه</h1>
+    <div class="sch-overlay"></div>
+
+    <div class="sch-content">
+        <h1>اساتید مدرسه ما</h1>
         <p>تیمی از معلمان مجرب و متعهد در کنار شما</p>
 
-        <div class="line-box">
-            <span class="icon">🎓</span>
-            <span class="line"></span>
+        <div class="sch-line-box">
+            <span class="sch-icon">🎓</span>
+            <span class="sch-line"></span>
         </div>
     </div>
 
-    <div class="curve"></div>
+    <div class="sch-curve"></div>
+
 </section>
 
 <!-- TEACHERS -->
-<section class="teachers">
+<section class="sch-teachers">
 
-    <div class="container">
+    <div class="sch-container">
 
         <h2>اساتید ما</h2>
-        <p class="subtitle">
+
+        <p class="sch-subtitle">
             اساتید با تجربه همراه مسیر یادگیری شما هستند
         </p>
 
         <!-- FILTER -->
-        <div class="filters">
+        <div class="sch-filters">
 
-            <button onclick="window.location.href='{% url "website:teachers" %}'"
+            <button
+                onclick="window.location.href='{% url "website:teachers" %}'"
                 class="{% if not selected_field %}active{% endif %}">
                 همه
             </button>
 
-            <button onclick="window.location.href='{% url "website:teachers" %}?field=math'"
+            <button
+                onclick="window.location.href='{% url "website:teachers" %}?field=math'"
                 class="{% if selected_field == 'math' %}active{% endif %}">
                 ریاضی
             </button>
 
-            <button onclick="window.location.href='{% url "website:teachers" %}?field=science'"
+            <button
+                onclick="window.location.href='{% url "website:teachers" %}?field=science'"
                 class="{% if selected_field == 'science' %}active{% endif %}">
                 علوم
             </button>
 
-            <button onclick="window.location.href='{% url "website:teachers" %}?field=humanities'"
+            <button
+                onclick="window.location.href='{% url "website:teachers" %}?field=humanities'"
                 class="{% if selected_field == 'humanities' %}active{% endif %}">
                 انسانی
             </button>
@@ -69,17 +76,19 @@
         </div>
 
         <!-- GRID -->
-        <div class="teachers-grid">
+        <div class="sch-teachers-grid">
 
             {% for teacher in teachers %}
 
-            <div class="card">
+            <div class="sch-card">
 
-                <img src="{{ teacher.image.url }}" alt="{{ teacher.name }}">
+                {% if teacher.image %}
+                    <img src="{{ teacher.image.url }}" alt="{{ teacher.name }}">
+                {% endif %}
 
                 <h3>{{ teacher.name }}</h3>
 
-                <span class="teacher-divider"></span>
+                <span class="sch-teacher-divider"></span>
 
                 <span>{{ teacher.subject }}</span>
 
@@ -100,16 +109,16 @@
 </section>
 
 <!-- CTA -->
-<section class="cta">
+<section class="sch-cta">
 
-    <div class="cta-content">
+    <div class="sch-cta-content">
         <p>
             ما معتقدیم هر دانش‌آموز آینده‌ساز است.
             با راهنمایی اساتید مجرب، به بهترین نسخه خودتان تبدیل شوید.
         </p>
     </div>
 
-    <span class="quote-line"></span>
+    <span class="sch-quote-line"></span>
 
 </section>
 
@@ -120,7 +129,6 @@
 {% endblock footer %}
 
 {% block extra_js %}
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -135,5 +143,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-
 {% endblock %}
