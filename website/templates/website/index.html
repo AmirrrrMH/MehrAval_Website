@@ -261,8 +261,8 @@
                 <a href="{% url "articles:article4" %}">بیشتر بخوانید ←</a>
             </div>
             </div>
-            {% comment %} <!-- CARD -->
-            <div class="card highlight">
+          <!-- CARD -->
+            <div class="card highlight hidden-card">
             <img src="{% static 'website/img/article/تابستان.webp' %}" alt="بهترین دبیرستان کرج">
             <div class="content">
                 <!-- <span class="date">۶ آبان ۱۴۰۲</span> -->
@@ -270,12 +270,14 @@
                 <p>یکی از رویدادهای مهم آموزشی که با حضور مشاوران برگزار شد...</p>
                 <a href="{% url "articles:article7" %}">بیشتر بخوانید ←</a>
             </div>
-            </div> {% endcomment %}
+            </div> 
 
         </div>
 
         <div class="more-btn">
-            <a href="{% url "website:home" %}">مشاهده همه مطالب</a>
+            <button id="showAllArticles">
+                مشاهده همه مطالب
+            </button>
         </div>
 
     </section>
@@ -348,7 +350,17 @@
             }
 
         });
-        </script>
+        document.getElementById('showAllArticles').addEventListener('click', function () {
+
+            // نمایش همه کارت‌های مخفی
+            document.querySelectorAll('.hidden-card').forEach(function(card){
+                card.style.display = 'block';
+            });
+
+            // مخفی شدن دکمه بعد از کلیک
+            this.style.display = 'none';
+        });
+    </script>
         {% endblock %}
         <!-- menu responsive for mobile end  -->
 </body>
