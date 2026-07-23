@@ -68,6 +68,9 @@
   display: flex;
 
 }
+.header-right a {
+  text-decoration: none;
+}
 
 /* بخش وسط: منوی اصلی */
 .nav-menu ul {
