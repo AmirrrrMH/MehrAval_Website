@@ -3,13 +3,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Vazirmatn", sans-serif;
-  overflow: hidden;
 }
 
 /* start menu  */
-html {
-  scroll-behavior: smooth;
-}
 
 :root {
   --primary-color: #7a121d;
@@ -50,30 +46,23 @@ html {
   height: 55px;
 }
 
-.header-right a {
-  text-decoration: none;
-}
-
 .logo-text {
-  text-decoration: none;
   font-size: 1.3rem;
   font-weight: 800;
   color: var(--text-dark);
   font-family: "Zain", sans-serif;
-  padding-top: 16px;
+  padding-top: 12px;
   padding-right: 8px;
 
 }
 
 .logo-text .highlight {
-  text-decoration: none;
   color: var(--primary-color);
   font-family: "Zain", sans-serif;
 
 }
 
 .header-right {
-  text-decoration: none;
   display: flex;
 
 }
@@ -220,7 +209,7 @@ html {
 
 /* start header  */
 .header {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/base.webp);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/base.PNG);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -232,7 +221,6 @@ html {
   width: 95%;
   color: white;
   padding: 200px 0;
-  margin: 0 86px;
 }
 
 .header_title1 {
@@ -750,7 +738,6 @@ body {
 
 /* CIRCLE BUTTON */
 .circle-btn {
-  text-decoration: none;
   width: 60px;
   height: 60px;
   background: #fff;
@@ -881,8 +868,7 @@ body {
   margin-top: 50px;
 }
 
-.more-btn a,
-.more-btn button {
+.more-btn a {
   background: linear-gradient(135deg, #a80000, #7a0000);
   color: #fff;
   padding: 14px 35px;
@@ -892,8 +878,7 @@ body {
   box-shadow: 0 5px 20px rgba(168, 0, 0, 0.3);
 }
 
-.more-btn a:hover,
-.more-btn button:hover {
+.more-btn a:hover {
   transform: translateY(-3px);
 }
 
@@ -1071,7 +1056,3 @@ body {
 }
 
 /* end footer */
-
-.hidden-card {
-  display: none;
-}
