@@ -47,6 +47,7 @@
 }
 
 .logo-text {
+  text-decoration: none;
   font-size: 1.3rem;
   font-weight: 800;
   color: var(--text-dark);
@@ -63,6 +64,7 @@
 }
 
 .header-right {
+  text-decoration: none;
   display: flex;
 
 }
@@ -221,6 +223,7 @@
   width: 95%;
   color: white;
   padding: 200px 0;
+  margin: 0 86px;
 }
 
 .header_title1 {
