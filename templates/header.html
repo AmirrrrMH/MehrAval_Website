@@ -170,14 +170,7 @@
         <div class="menu-toggle">☰</div>
         <!-- <nav class="nav-menu"></nav> -->
         <!-- پایان ریسپانسیو موبایل -->
-        <div class="header-right">
-          <a href="{% url 'website:home' %}">
-            <span class="logo-text">دبیرستان <span class="highlight">مهر اول</span></span></a>
-            <img src="{% static 'website/img/logo-removebg-preview.png' %}" alt="دبیرستان مهر اول" class="logo-area" />
-
-        </div>
         
-
         <nav class="nav-menu">
           <ul>
             <li>
@@ -197,7 +190,14 @@
             </li>
           </ul>
         </nav>
+        
+        <div class="header-right">
+          <a href="{% url 'website:home' %}">
+            <span class="logo-text">دبیرستان <span class="highlight">مهر اول</span></span></a>
+            <img src="{% static 'website/img/logo-removebg-preview.png' %}" alt="دبیرستان مهر اول" class="logo-area" />
 
+        </div>
+        
         <div class="header-left">
           <a href="#footer" class="contact-btn">
               <i class="contact-icon"></i>
