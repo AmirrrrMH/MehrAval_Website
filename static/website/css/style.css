@@ -228,6 +228,7 @@ html {
 }
 
 .header_box {
+  margin-left: 5px;
   width: 95%;
   color: white;
   padding: 200px 0;
