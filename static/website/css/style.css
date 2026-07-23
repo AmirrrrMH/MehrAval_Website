@@ -228,11 +228,10 @@ html {
 }
 
 .header_box {
-  margin-left: 5px;
   width: 95%;
   color: white;
   padding: 200px 0;
-  margin: 0 auto;
+  margin: 0 70px;
 }
 
 .header_title1 {
