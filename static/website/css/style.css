@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Vazirmatn", sans-serif;
-  overflow-y: hidden;
+  overflow-y: none;
 }
 
 /* start menu  */
