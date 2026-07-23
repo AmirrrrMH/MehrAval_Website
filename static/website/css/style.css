@@ -744,6 +744,7 @@ body {
 
 /* CIRCLE BUTTON */
 .circle-btn {
+  text-decoration: none;
   width: 60px;
   height: 60px;
   background: #fff;
