@@ -103,33 +103,16 @@
             پرسش هرچه باشد، پاسخ <span>آموزش</span> است.
         </h2>
 
-        <div class="items">
+        <div class="slider">
 
-            <!-- ITEM 1 -->
-            <div class="item">
-            <div class="icon">
-                📖
+            <div class="slides">
+                <div class="slide active">
+                    <img src="{% static 'assets/img/jam-banner.PNG' %}">
+                </div>
             </div>
 
-            <h3>نشریه‌ی فانوس</h3>
-
-
-                مشاهده بیشتر ←
-
-            </div>
-
-            <!-- ITEM 2 -->
-            <div class="item">
-            <div class="icon">
-                🏆
-            </div>
-
-            <h3>افتخارات ما</h3>
-
-            <a href="{% url "website:successes" %}" class="link">
-                مشاهده بیشتر ←
-            </a>
-            </div>
+            <button class="prev" onclick="prevSlide()">❮</button>
+            <button class="next" onclick="nextSlide()">❯</button>
 
         </div>
 
@@ -262,7 +245,7 @@
             </div>
             </div>
           <!-- CARD -->
-            <div class="card highlight hidden-card">
+            {% comment %} <div class="card highlight hidden-card">
             <img src="{% static 'website/img/article/تابستان.webp' %}" alt="بهترین دبیرستان کرج">
             <div class="content">
                 <!-- <span class="date">۶ آبان ۱۴۰۲</span> -->
@@ -278,7 +261,7 @@
             <button id="showAllArticles">
                 مشاهده همه مطالب
             </button>
-        </div>
+        </div> {% endcomment %}
 
     </section>
     <!-- end article  -->
@@ -360,6 +343,28 @@
             // مخفی شدن دکمه بعد از کلیک
             this.style.display = 'none';
         });
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide(i){
+    slides.forEach(s => s.classList.remove("active"));
+    slides[i].classList.add("active");
+}
+
+function nextSlide(){
+    index++;
+    if(index >= slides.length) index = 0;
+    showSlide(index);
+}
+
+function prevSlide(){
+    index--;
+    if(index < 0) index = slides.length - 1;
+    showSlide(index);
+}
+
+// خودکار
+setInterval(nextSlide, 3000);
     </script>
         {% endblock %}
         <!-- menu responsive for mobile end  -->

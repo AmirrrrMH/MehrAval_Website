@@ -544,13 +544,57 @@ body {
   color: #a80000;
 }
 
-/* ITEMS */
-.items {
-  display: flex;
-  justify-content: center;
-  gap: 100px;
-  flex-wrap: wrap;
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    max-height: 550px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius:15px ;
 }
+
+.slides {
+    position: relative;
+    
+}
+
+.slide {
+    width: 100%;
+    display: none;
+    transition: 
+        opacity 1.5s ease,
+        transform 1.5s ease;
+}
+
+
+
+.slide.active {
+    display: block;
+}
+
+/* دکمه‌ها */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 70px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 
 /* ITEM */
 .item {
