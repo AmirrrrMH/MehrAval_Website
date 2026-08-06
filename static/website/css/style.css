@@ -548,7 +548,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    max-height: 550px;
+
     margin: 40px auto;
     overflow: hidden;
     border-radius:15px ;
@@ -571,6 +571,12 @@ body {
 
 .slide.active {
     display: block;
+}
+.slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
 }
 
 /* دکمه‌ها */
