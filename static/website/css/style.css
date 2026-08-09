@@ -580,7 +580,7 @@ body {
 }
 
 /* دکمه‌ها */
-button {
+.slider button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
