@@ -113,9 +113,9 @@
                     <img src="{% static 'website/img/b2.webp' %}">
                 </div>
             </div>
-
-            <button class="prev" onclick="prevSlide()">❯</button>
-            <button class="next" onclick="nextSlide()">❮</button>
+            
+            <button class="prev" id="prevSlide">❯</button>
+            <button class="next" id="nextSlide">❮</button>
 
         </div>
 
@@ -321,53 +321,112 @@
         <!-- menu responsive for mobile -->
         {% block extra_js %}
         
-         <script>
-        document.addEventListener("DOMContentLoaded", function () {
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
 
-            const toggle = document.querySelector('.menu-toggle');
-            const menu = document.querySelector('.nav-menu');
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.nav-menu');
 
-            if (toggle && menu) {
-                toggle.addEventListener('click', function () {
-                    menu.classList.toggle('active');
+        if (toggle && menu) {
+            toggle.addEventListener('click', function () {
+                menu.classList.toggle('active');
+            });
+        } else {
+            console.log("menu-toggle یا nav-menu پیدا نشد ❌");
+        }
+
+
+        // =========================
+        // نمایش همه مقالات
+        // =========================
+
+        const showAllArticles = document.getElementById('showAllArticles');
+
+        if (showAllArticles) {
+
+            showAllArticles.addEventListener('click', function () {
+
+                // نمایش همه کارت‌های مخفی
+                document.querySelectorAll('.hidden-card').forEach(function(card){
+                    card.style.display = 'block';
                 });
-            } else {
-                console.log("menu-toggle یا nav-menu پیدا نشد ❌");
-            }
 
-        });
-        document.getElementById('showAllArticles').addEventListener('click', function () {
+                // مخفی شدن دکمه بعد از کلیک
+                this.style.display = 'none';
 
-            // نمایش همه کارت‌های مخفی
-            document.querySelectorAll('.hidden-card').forEach(function(card){
-                card.style.display = 'block';
             });
 
-            // مخفی شدن دکمه بعد از کلیک
-            this.style.display = 'none';
-        });
-let slides = document.querySelectorAll(".slide");
-let index = 0;
+        }
 
-function showSlide(i){
-    slides.forEach(s => s.classList.remove("active"));
-    slides[i].classList.add("active");
-}
 
-function nextSlide(){
-    index++;
-    if(index >= slides.length) index = 0;
-    showSlide(index);
-}
+        // =========================
+        // Slider
+        // =========================
 
-function prevSlide(){
-    index--;
-    if(index < 0) index = slides.length - 1;
-    showSlide(index);
-}
+        const slides = document.querySelectorAll(".slide");
+        const prevButton = document.getElementById("prevSlide");
+        const nextButton = document.getElementById("nextSlide");
 
-// خودکار
-setInterval(nextSlide, 3000);
+        let currentSlide = 0;
+
+
+        function showSlide(slideNumber) {
+
+            if (slides.length === 0) {
+                return;
+            }
+
+            slides.forEach(function(slide) {
+                slide.classList.remove("active");
+            });
+
+            slides[slideNumber].classList.add("active");
+        }
+
+
+        function nextSlide() {
+
+            currentSlide++;
+
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+
+            showSlide(currentSlide);
+        }
+
+
+        function prevSlide() {
+
+            currentSlide--;
+
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+
+            showSlide(currentSlide);
+        }
+
+
+        // دکمه قبلی
+        if (prevButton) {
+            prevButton.addEventListener("click", prevSlide);
+        }
+
+
+        // دکمه بعدی
+        if (nextButton) {
+            nextButton.addEventListener("click", nextSlide);
+        }
+
+
+        // حرکت خودکار اسلایدر
+        if (slides.length > 1) {
+            setInterval(nextSlide, 3000);
+        }
+
+    });
+</script>
     </script>
         {% endblock %}
         <!-- menu responsive for mobile end  -->
