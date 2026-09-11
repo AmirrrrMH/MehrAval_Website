@@ -17,5 +17,5 @@ Username: {instance.username}
 Email: {instance.email}
 """,
             from_email=None,
-            recipient_list=["admin@example.com"],
+            recipient_list=["yosefiamirmohammas@gmail.com"],
         )
