@@ -25,9 +25,19 @@ SECRET_KEY = 'django-insecure-!tx%jq+!9)v5a7j56_-7wvtg8efd6eoo%tpc4@p4p+a&23fz+(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "mehreavval.ir",
+    "www.mehreavval.ir",
+    "mehreavval.com",
+    "www.mehreavval.com",
+    "demo.gbfbgtdg.ir",
+]
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://mehreavval.ir",
+    "https://www.mehreavval.ir",
+    "https://mehreavval.com",
+    "https://www.mehreavval.com",
     "https://demo.gbfbgtdg.ir",
 ]
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
